@@ -46,6 +46,13 @@ if (track && dotsNav) {
     });
   }
 }
+// ========== NAVIGATION MENU TOGGLE ==========
+const menuBtn = document.getElementById("menu-btn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 
 // ABOUT PAGE - HERO CAROUSEL (scoped to About page)
 const trackHero = document.querySelector(".about-carousel-track");

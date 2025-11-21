@@ -194,6 +194,7 @@ h4 {
 }
 
 .header .container {
+  position: relative; /* FIX */
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
   display: flex;
@@ -201,47 +202,37 @@ h4 {
   justify-content: space-between;
 }
 
-/* Navigation */
 .nav {
   display: flex;
   gap: var(--space-lg);
   align-items: center;
-}
-.nav a {
-  font-size: 1.6rem; /* 16px */
-  font-weight: 500;
-  color: var(--muted);
-  transition: color 0.2s ease;
-}
-.nav a:hover {
-  color: var(--color-primary);
+  z-index: 999;
 }
 
-.btn-book {
-  display: inline-block;
-  background: var(--color-primary);
-  color: var(--bg);
-  padding: 1rem 2.4rem;
-  border-radius: var(--radius);
-  font-size: 1.6rem;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-.btn-book:hover {
-  background: var(--color-primary-600);
-}
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: var(--color-accent);
+    color: var(--bg);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1em;
+  }
 
-.menu-btn {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: var(--muted);
-  cursor: pointer;
-}
+  .nav.active {
+    display: flex;
+  }
 
-#mobile-menu {
-  display: none;
+  .menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--muted);
+    cursor: pointer;
+  }
 }
 
 @media (max-width: var(--breakpoint-lg)) {
@@ -315,7 +306,7 @@ h4 {
 /* Trip cards */
 .trip-card {
   position: relative;
-  flex: 0 0 calc(100% / 3); /* 3 columns */
+  flex: 0 0 calc(100% / 2);
   overflow: hidden;
 }
 
@@ -337,7 +328,7 @@ h4 {
   width: 100%;
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
@@ -347,7 +338,7 @@ h4 {
 }
 
 .trip-card:hover .info {
-  opacity: 1;
+  scale: 1.05;
 }
 
 /* Dots */
