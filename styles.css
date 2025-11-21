@@ -235,19 +235,10 @@ h4 {
   }
 }
 
-@media (max-width: var(--breakpoint-lg)) {
-  .nav,
-  .btn-book {
+@media (min-width: 992px) {
+  .menu-btn {
     display: none;
   }
-  .menu-btn {
-    display: block;
-  }
-}
-
-/* Mobile nav panel */
-#mobile-menu.open {
-  display: block;
 }
 
 /* ========== HERO SECTION ========== */
