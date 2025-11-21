@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Taniti Tourism</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <div class="logo"><p>Taniti Island</p></div>
+
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#">Booking</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Open Menu">☰</button>
+      </div>
+    </header>
+
+    <section class="hero-booking">
+      <div class="hero-inner">
+        <h2>We're Here to Help</h2>
+        <p>
+          Contact the Taniti Tourism Office for questions, assistance, or travel
+          support.
+        </p>
+
+        <div class="contact-grid">
+          <div class="card">
+            <div class="icon-circle">📍</div>
+            <h4>Address</h4>
+            <p>Bay Street, Taniti City</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-circle">📞</div>
+            <h4>Phone</h4>
+            <p>(800) 555-TNTI</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-circle">✉️</div>
+            <h4>Email</h4>
+            <p>support@tanititourism.gov</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="form-container">
+        <form id="contactForm">
+          <div class="two-col">
+            <div>
+              <label>Full Name</label>
+              <input type="text" name="name" required placeholder="John Doe" />
+            </div>
+
+            <div>
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="john@example.com"
+              />
+            </div>
+
+            <div>
+              <label>Phone (optional)</label>
+              <input type="tel" name="phone" placeholder="+1 555 123 4567" />
+            </div>
+
+            <div>
+              <label>Travel Topic</label>
+              <select name="topic" required>
+                <option value="">Select a topic...</option>
+                <option value="booking">Booking Help</option>
+                <option value="accommodation">Accommodation</option>
+                <option value="transportation">Transportation</option>
+                <option value="sightseeing">Sightseeing</option>
+                <option value="safety">Safety</option>
+              </select>
+            </div>
+          </div>
+
+          <label>Message</label>
+          <textarea
+            rows="6"
+            name="message"
+            required
+            placeholder="How can we help you?"
+          ></textarea>
+
+          <div style="text-align: center">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQS -->
+    <section class="faq-wrapper">
+      <div class="faq-title-block">
+        <h2 class="faq-big-title">FREQUENTLY ASKED<br />INFORMATION</h2>
+        <div class="faq-title-underline"></div>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Power Outlets on Taniti
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            Power outlets are 120 volts (same as in the United States).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Alcohol Sale Restrictions
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            Alcohol cannot be sold or served between midnight and 9:00 a.m.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Drinking Age on Taniti
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            The drinking age is 18, though enforcement is not strict.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            English Fluency
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            Many younger Tanitians speak fluent English. In rural areas,
+            especially among older residents, English is spoken very little.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Hospitals & Clinics
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            Taniti has one hospital and several clinics. The hospital has many
+            multilingual employees.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Crime & Safety
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            Violent crime is rare. However, as tourism increases, pickpocketing
+            and petty crimes are becoming more common.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            National Holidays
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            Taniti has many national holidays. Many attractions and restaurants
+            close during these days, so plan ahead.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Currency & Payments
+            <span class="faq-icon">⌄</span>
+          </button>
+          <div class="faq-answer">
+            Taniti uses the U.S. dollar. Many businesses also accept euros and
+            yen. Several banks offer currency exchange and most places accept
+            major credit cards.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <p>&copy; 2025 Taniti Island Tourism. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

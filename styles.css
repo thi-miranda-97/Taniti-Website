@@ -1,0 +1,1063 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ========== ROOT VARIABLES & GLOBALS ========== */
+:root {
+  --font-family: "Poppins", sans-serif;
+  --bg: #ffffff;
+  --color-primary: #0066cc;
+  --color-primary-600: #0257a7;
+  --color-accent: #1a73e8;
+  --color-accent-600: #135ec2;
+  --text: #222;
+  --muted: #555;
+  --muted-2: #888;
+  --shadow-sm: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 0.4rem 1.4rem rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.15);
+  --radius: 0.8rem;
+  --radius-lg: 1.2rem;
+  --container-max: 120rem; /* 1200px with 1rem = 10px */
+  --space-sm: 1.2rem; /* 12px */
+  --space: 2.4rem; /* 24px */
+  --space-lg: 3.2rem; /* 32px */
+  --breakpoint-lg: 99.2rem; /* 992px */
+  --breakpoint-md: 76.8rem; /* 768px */
+  --brand-dark: #0a2239;
+  --card-radius: 1.6rem; /* 16px */
+  --card-shadow: 0 0.8rem 2.5rem rgba(0, 0, 0, 0.08);
+  --booking-accent: #0f8f9f;
+}
+
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: var(--font-family);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+section {
+  padding: 8rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utility */
+
+.logo p {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.container {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space);
+  padding-right: var(--space);
+}
+
+button {
+  font-family: inherit;
+  margin-top: 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.12s ease;
+}
+
+.btn-primary:link,
+.btn-primary:visited {
+  font-family: inherit;
+  font-size: 2rem;
+  background: var(--color-accent);
+  color: var(--bg);
+  padding: 2.4rem 4.8rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  background: var(--color-primary-600);
+}
+/* ================= Utility Button System ================= */
+/* Reusable button classes for consistent CTAs across pages */
+.btn {
+  display: inline-block;
+  padding: 1rem 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.btn:focus {
+  outline: 3px solid rgba(16, 24, 40, 0.08);
+  outline-offset: 3px;
+}
+
+/* Primary */
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--bg);
+  box-shadow: 0 0.6rem 1.6rem rgba(16, 24, 40, 0.06);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary-600);
+}
+
+/* Secondary (neutral) */
+.btn-secondary {
+  background: #f7fafc;
+  color: var(--brand-dark);
+  border: 1px solid rgba(16, 24, 40, 0.04);
+}
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.6rem 1.2rem rgba(8, 12, 20, 0.03);
+}
+
+/* Keep menu button and site-specific buttons out of global overrides */
+.menu-btn,
+.btn-book {
+  box-shadow: none;
+}
+
+/* ========== TYPOGRAPHY UTILITIES ========== */
+h1 {
+  font-size: 5.2rem;
+  font-weight: 700;
+  max-width: 100rem;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.sub-h1 {
+  font-size: 1.8rem;
+  margin: 1.2rem auto 3.2rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+.h2 {
+  color: var(--bg);
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+  color: var(--color-primary);
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+  color: var(--color-primary);
+}
+
+/* ========== FOOTER ========== */
+.footer-section {
+  background: var(--brand-dark);
+  color: var(--bg);
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+/* ========== HEADER ========== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.header .container {
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+}
+.nav a {
+  font-size: 1.6rem; /* 16px */
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+.nav a:hover {
+  color: var(--color-primary);
+}
+
+.btn-book {
+  display: inline-block;
+  background: var(--color-primary);
+  color: var(--bg);
+  padding: 1rem 2.4rem;
+  border-radius: var(--radius);
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.btn-book:hover {
+  background: var(--color-primary-600);
+}
+
+.menu-btn {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+@media (max-width: var(--breakpoint-lg)) {
+  .nav,
+  .btn-book {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* Mobile nav panel */
+#mobile-menu.open {
+  display: block;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  position: relative;
+  height: 90vh;
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* Remove the default section spacing for hero areas so header
+   sits flush on top of the hero */
+.hero,
+.hero-section {
+  padding: 0;
+}
+
+/* ========== TRIP IDEA CARDS ========== */
+.trip-section {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+/* Carousel container */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* Track with all slides */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Trip cards */
+.trip-card {
+  position: relative;
+  flex: 0 0 calc(100% / 3); /* 3 columns */
+  overflow: hidden;
+}
+
+.trip-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 45rem;
+  width: auto;
+}
+
+/* Info overlay */
+.trip-card .info {
+  font-size: 1.8rem;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.trip-card .info h3 {
+  margin: 0;
+  color: var(--bg);
+}
+
+.trip-card:hover .info {
+  opacity: 1;
+}
+
+/* Dots */
+.carousel-dots {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.carousel-dots button {
+  border: none;
+  background: var(--muted-2);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carousel-dots button.active {
+  background: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 90rem) {
+  .trip-card {
+    flex: 0 0 50%; /* 2 columns */
+  }
+}
+
+@media (max-width: 60rem) {
+  .trip-card {
+    flex: 0 0 100%; /* 1 column */
+  }
+}
+
+/* ========== CALL TO ACTION ========== */
+.cta-section {
+  background: #e3f2fd;
+  text-align: center;
+  padding: 7rem 2rem;
+}
+
+/* ========== RESPONSIVE TWEAKS ========== */
+@media (max-width: var(--breakpoint-md)) {
+  .trip-card img {
+    height: 16rem;
+  }
+  .hero {
+    height: 60vh;
+  }
+  #mobile-menu {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+/* /////////////////////////////////ABOUT PAGE /////////////////////////////////////// */
+
+/* ========== ABOUT PAGE STYLES (scoped) ========== */
+/* Avoid re-declaring global resets or the body defaults; scope styles to the about page */
+
+/* Hero Section (About page) */
+.hero-section {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/* Scoped carousel for the about page to avoid colliding with main carousel */
+.about-carousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.about-carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  height: 100%;
+}
+
+.about-carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.about-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Per-slide caption/info */
+.about-carousel-slide .slide-info {
+  position: absolute;
+  left: 2.4rem;
+  bottom: 3.2rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+  color: var(--bg);
+  padding: 1.6rem 2.4rem;
+  border-radius: 0.8rem;
+  max-width: 60rem;
+
+  opacity: 0;
+  transform: translateY(0.8rem);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.about-carousel-slide.active .slide-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--bg);
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Section */
+.about-section {
+  padding: 8rem 2rem;
+  background: var(--bg);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 120rem;
+  margin: auto;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2);
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.h2-about {
+  text-align: center;
+  margin-bottom: 5.2rem;
+}
+
+/* Tourist Needs Section */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rem;
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--bg);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.12);
+}
+.card img {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 2rem;
+}
+
+/* Stagger effect by nth-child */
+.grid-container .card:nth-child(odd) {
+  transform: translateY(0);
+}
+.grid-container .card:nth-child(even) {
+  transform: translateY(18rem);
+}
+
+.card:hover {
+  transform: translateY(-0.5rem) scale(1.02);
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .grid-container .card {
+    transform: translateY(0);
+  }
+}
+
+/* ///////////////////BOOKING PAGE/////////////////// */
+
+/* ========== BOOKING PAGE (scoped) ========== */
+
+.hero-booking,
+.hero.booking-hero {
+  background: #faf6e2;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+/* Booking form (scoped to #booking-form) */
+
+#booking-form .form-card {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  background: var(--bg);
+  padding: 1.25rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+#booking-form .form-card label {
+  display: block;
+  font-weight: 600;
+  color: var(--brand-dark);
+  font-size: 1.6rem;
+}
+#booking-form .form-card input,
+#booking-form .form-card select {
+  font-family: inherit;
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.6rem;
+  margin-top: 0.35rem;
+}
+#booking-form .form-card .btn-accent {
+  grid-column: 4/5;
+  align-self: end;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Lodging cards (scoped to #lodging-options) */
+
+#lodging-options {
+  width: 100%;
+  height: fit-content;
+  background-color: #faf6e2;
+  margin-bottom: 8rem;
+}
+#lodging-options h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+#lodging-options .lodging-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+#lodging-options .card {
+  background: var(--bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+}
+#lodging-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+#lodging-options .lodging-grid {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+#lodging-options .card-media {
+  height: 14rem;
+  background-size: cover;
+  background-position: center;
+}
+#lodging-options .card-body {
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+#lodging-options .card h4 {
+  margin: 0;
+}
+#lodging-options .muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+#lodging-options .price {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--booking-accent);
+}
+#lodging-options .card-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: auto;
+}
+#lodging-options .details {
+  border: 2px solid var(--booking-accent);
+  background: var(--bg);
+  color: var(--booking-accent);
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.6rem;
+}
+#lodging-options .book {
+  background: var(--booking-accent);
+  color: #fff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.6rem;
+  border: none;
+}
+
+/* Transport (scoped to #transportation) */
+#transportation {
+  width: 100%;
+}
+#transportation .transport-grid {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+#transportation .card-option {
+  border: 2px solid #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+}
+#transportation .card-option.selected {
+  font-weight: 700;
+  color: var(--bg);
+  background: var(--booking-accent);
+}
+
+/* Summary and confirmation (scoped by id) */
+#summary .summary-card {
+  max-width: 72rem;
+  margin: 0 auto;
+  background: var(--bg);
+  border-radius: 1rem;
+  padding: 2.4rem 3.2rem;
+  box-shadow: var(--card-shadow);
+}
+
+/* Booking summary rows: left label (dt) and right value (dd) */
+#summary .summary-card h2 {
+  font-size: 3.6rem;
+  margin: 0 0 1.2rem 0;
+  color: var(--brand-dark);
+}
+
+#summary .summary-card dl {
+  margin: 0 0 1.6rem 0;
+}
+
+#summary .summary-card dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #eef2f4;
+}
+
+#summary .summary-card dl > div:last-child {
+  border-bottom: none;
+  padding-bottom: 0.25rem;
+}
+
+#summary .summary-card dt {
+  color: var(--muted);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#summary .summary-card dd {
+  text-align: right;
+  color: var(--brand-dark);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+#summary .price-box {
+  margin-top: 1.6rem;
+  background: #fbfdff;
+  padding: 1.6rem 1.8rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(228, 235, 237, 0.6);
+}
+
+#summary .price-box div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  color: var(--brand-dark);
+}
+
+#summary .price-box div + div {
+  border-top: 1px solid rgba(230, 236, 238, 0.8);
+  padding-top: 0.8rem;
+}
+
+#summary .price-box .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.8rem;
+}
+
+#summary .price-box .total strong {
+  color: var(--booking-accent);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+#summary .summary-card #complete-booking {
+  display: block;
+  width: 100%;
+  padding: 1.6rem 2.4rem;
+  margin-top: 2.4rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: var(--booking-accent);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0.8rem 2rem rgba(15, 143, 159, 0.12);
+}
+
+#summary .summary-card #complete-booking:hover {
+  transform: translateY(-2px);
+}
+
+#confirmation .confirm-card {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: #e3f2fd;
+  box-shadow: var(--card-shadow);
+}
+#confirmation .confirm-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 999px;
+  background: var(--booking-accent);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+#summary .summary-card.highlight {
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.12);
+  border-left: 0.6rem solid var(--booking-accent);
+  transform: translateY(-0.4rem);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+@media (max-width: 90rem) {
+  #booking-form .form-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #booking-form .form-card .btn-accent {
+    grid-column: 1/3;
+  }
+}
+
+@media (max-width: 52rem) {
+  #booking-form .form-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ///////////////////CONTACT PAGE/////////////////// */
+.contact-grid {
+  margin: 3.2rem auto;
+  background-color: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 120rem;
+}
+
+.contact-grid .card {
+  background: var(--bg);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  padding: 1.2rem 1.6rem;
+  text-align: center;
+}
+
+.form-section {
+  padding: 8rem 2rem;
+}
+
+.form-container {
+  background: var(--bg);
+  padding: 4rem;
+  max-width: 90rem;
+  margin: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ocean-teal);
+}
+
+/* -------- Info Section -------- */
+
+.card {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+  background: #e3f2fd;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50%;
+  margin-bottom: 1.8rem;
+}
+/* ===== FAQ Layout ===== */
+.faq-wrapper {
+  display: grid;
+  grid-template-columns: 0.9fr 2fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 2rem;
+}
+
+/* Left Title Block */
+.faq-title-block {
+  position: sticky;
+  top: 4rem;
+  height: fit-content;
+}
+
+.faq-big-title {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.faq-title-underline {
+  width: 120px;
+  height: 8px;
+  background: var(--color-primary);
+  margin-top: 1.6rem;
+}
+
+/* FAQ List */
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding: 1.6rem 0;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+/* Hidden Answer w/ Animation */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  font-size: 1.6rem;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-right: 2rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .faq-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

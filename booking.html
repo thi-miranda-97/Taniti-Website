@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Book Your Stay - Taniti Island</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <div class="logo"><p>Taniti Island</p></div>
+
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="#">Booking</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="menu-btn" aria-label="Open Menu">☰</button>
+      </div>
+    </header>
+
+    <section class="hero-booking">
+      <div class="hero-inner">
+        <h2>Plan Your Stay in Taniti</h2>
+        <p>
+          Choose your dates, explore lodging options, and book your perfect
+          tropical getaway.
+        </p>
+      </div>
+    </section>
+
+    <!-- Booking form -->
+    <main>
+      <section id="booking-form" class="section form-section">
+        <div class="form-card">
+          <label>Check-In Date<br /><input id="checkin" type="date" /></label>
+          <label>Check-Out Date<br /><input id="checkout" type="date" /></label>
+          <label
+            >Guests<br />
+            <select id="guests">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5+ Guests</option>
+            </select>
+          </label>
+          <button id="search-lodging" class="btn btn-primary">Search</button>
+        </div>
+      </section>
+
+      <!-- Lodging options -->
+      <h2 style="text-align: center">Available Lodging Options</h2>
+      <section id="lodging-options" class="section lodging-section">
+        <div class="grid lodging-grid">
+          <article class="card" data-type="oceanfront" data-price="299">
+            <div
+              class="card-media"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=500&fit=crop');
+              "
+            ></div>
+            <div class="card-body">
+              <h4>Oceanfront Resort</h4>
+              <div class="stars">★★★★★</div>
+              <p class="price">$299 <span class="muted">/ night</span></p>
+              <p class="muted">
+                Luxury beachfront property with stunning ocean views, infinity
+                pool and spa.
+              </p>
+              <div class="card-actions">
+                <button class="btn btn-primary book">Book Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-type="family" data-price="149">
+            <div
+              class="card-media"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop');
+              "
+            ></div>
+            <div class="card-body">
+              <h4>Family-Owned Hotel</h4>
+              <div class="stars">★★★★☆</div>
+              <p class="price">$149 <span class="muted">/ night</span></p>
+              <p class="muted">
+                Comfortable, centrally located lodging with authentic island
+                hospitality.
+              </p>
+              <div class="card-actions">
+                <button class="btn btn-primary book">Book Now</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-type="hostel" data-price="59">
+            <div
+              class="card-media"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=500&fit=crop');
+              "
+            ></div>
+            <div class="card-body">
+              <h4>Budget Hostel</h4>
+              <div class="stars">★★★☆☆</div>
+              <p class="price">$59 <span class="muted">/ night</span></p>
+              <p class="muted">
+                Affordable, clean accommodation perfect for backpackers and
+                budget travelers.
+              </p>
+              <div class="card-actions">
+                <button class="btn btn-primary book">Book Now</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Transportation -->
+
+      <section id="transportation" class="section transport-section hidden">
+        <h2 style="text-align: center">Add Transportation to Your Trip</h2>
+        <div class="grid transport-grid">
+          <div class="transport card-option" data-key="taxi" data-price="45">
+            Airport Taxi<br /><span class="muted">$45 one-way</span>
+          </div>
+          <div class="transport card-option" data-key="car" data-price="65">
+            Rental Car<br /><span class="muted">$65/day</span>
+          </div>
+          <div class="transport card-option" data-key="bike" data-price="15">
+            Bike Rental<br /><span class="muted">$15/day</span>
+          </div>
+          <div class="transport card-option" data-key="bus" data-price="25">
+            Public Bus Pass<br /><span class="muted">$25/week</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section id="summary" class="section summary-section hidden">
+        <div class="summary-card">
+          <h2>Booking Summary</h2>
+          <dl>
+            <div>
+              <dt>Check-In</dt>
+              <dd id="sum-checkin">Not selected</dd>
+            </div>
+            <div>
+              <dt>Check-Out</dt>
+              <dd id="sum-checkout">Not selected</dd>
+            </div>
+            <div>
+              <dt>Guests</dt>
+              <dd id="sum-guests">2 Guests</dd>
+            </div>
+            <div>
+              <dt>Room</dt>
+              <dd id="sum-room">Not selected</dd>
+            </div>
+            <div>
+              <dt>Transport</dt>
+              <dd id="sum-transport">None</dd>
+            </div>
+          </dl>
+          <div class="price-box">
+            <div><span>Subtotal</span><strong id="sum-sub">$0.00</strong></div>
+            <div>
+              <span>Taxes & Fees</span><strong id="sum-tax">$0.00</strong>
+            </div>
+            <div class="total">
+              <span>Total</span><strong id="sum-total">$0.00</strong>
+            </div>
+          </div>
+          <button id="complete-booking" class="btn btn-primary">
+            Confirm Booking
+          </button>
+        </div>
+      </section>
+
+      <!-- Confirmation -->
+      <section id="confirmation" class="section confirmation-section hidden">
+        <div class="confirm-card">
+          <div class="confirm-icon">✓</div>
+          <h2>Your Taniti Adventure Is Booked!</h2>
+          <p>
+            We've sent your itinerary and confirmation email. We can't wait to
+            see you on the island.
+          </p>
+          <button id="return-home" class="btn btn-primary">Done</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-section">
+      <p>&copy; 2025 Taniti Island Tourism. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
