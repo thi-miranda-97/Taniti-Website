@@ -1082,3 +1082,8 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+
+a[aria-current="true"] {
+  font-weight: 700;
+  color: var(--color-accent);
+}
